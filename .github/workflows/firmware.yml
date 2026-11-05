@@ -35,9 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: felucca-firmware
-                    - firmware/felucca.fwsc
-          - firmware/felucca_smk37.fwsc
-
-          path: |
-            firmware/felucca.fwsc
-            firmware/felucca_smk37.fwsc
+          path: firmware/

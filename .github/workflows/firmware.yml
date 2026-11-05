@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: pip install Pillow fonttools
 
+      - name: Install JieLi Toolchain
+        run: |
+          mkdir -p ~/.jieli
+          chmod +x tools/get_toolchain.sh
+          ./tools/get_toolchain.sh
+
       - name: Build Firmware
         run: |
           chmod +x build.sh
@@ -29,4 +35,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: felucca-firmware
-          path: firmware/
+                    - firmware/felucca.fwsc
+          - firmware/felucca_smk37.fwsc
+
+          path: |
+            firmware/felucca.fwsc
+            firmware/felucca_smk37.fwsc
